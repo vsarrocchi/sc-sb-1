@@ -1,13 +1,21 @@
 import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 import Stack from "@mui/material/Stack";
 
-const AlertSc: React.FC = () => {
+interface AlertScProps {
+  title: string;
+  variant: "standard" | "filled" | "outlined";
+  severity: "error" | "warning" | "info" | "success";
+  text: string;
+}
+
+const AlertSc = ({ title, variant, severity, text }: AlertScProps) => {
   return (
     <Stack sx={{ width: "100%" }} spacing={2}>
-      <Alert severity="error">This is an error alert — check it out!</Alert>
-      <Alert severity="warning">This is a warning alert — check it out!</Alert>
-      <Alert severity="info">This is an info alert — check it out!</Alert>
-      <Alert severity="success">This is a success alert — check it out!</Alert>
+      <Alert variant={variant} severity={severity}>
+        <AlertTitle>{title}</AlertTitle>
+        {text}
+      </Alert>
     </Stack>
   );
 };

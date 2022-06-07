@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CheckboxSc from "./CheckboxSc";
 
 export default {
-  title: "Components/CheckboxSc",
+  title: "Components/InputsSc/CheckboxSc",
   component: CheckboxSc,
 } as ComponentMeta<typeof CheckboxSc>;
 
