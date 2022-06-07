@@ -11,4 +11,12 @@ const Template: ComponentStory<typeof TableSc> = (args) => (
   <TableSc {...args} />
 );
 
-export const Default = Template.bind({});
+export const Primary = Template.bind({});
+Primary.args = {
+  size: "medium",
+};
+
+export const Dense = Template.bind({});
+Dense.args = {
+  size: "small",
+};

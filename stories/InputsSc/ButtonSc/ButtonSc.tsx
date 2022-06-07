@@ -10,11 +10,13 @@ interface ButtonScProps {
     | "info"
     | "warning";
   label: string;
+  disabled?: boolean;
+  size: "small" | "medium" | "large";
 }
 
-const ButtonSc = ({ variant, color, label }: ButtonScProps) => {
+const ButtonSc = ({ variant, color, label, disabled, size }: ButtonScProps) => {
   return (
-    <Button variant={variant} color={color}>
+    <Button variant={variant} color={color} disabled={disabled} size={size}>
       {label}
     </Button>
   );

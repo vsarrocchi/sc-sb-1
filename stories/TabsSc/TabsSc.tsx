@@ -4,6 +4,11 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
+interface TabScProps {
+  textColor: "inherit" | "secondary" | "primary";
+  indicatorColor: "secondary" | "primary";
+  orientation: "vertical" | "horizontal";
+}
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -37,7 +42,7 @@ function a11yProps(index: number) {
   };
 }
 
-const TabsSc: React.FC = () => {
+const TabsSc = ({ textColor, indicatorColor, orientation }: TabScProps) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -45,11 +50,31 @@ const TabsSc: React.FC = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box
+      sx={
+        orientation === "vertical"
+          ? {
+              flexGrow: 1,
+              bgcolor: "background.paper",
+              display: "flex",
+              height: 224,
+            }
+          : { width: "100%" }
+      }
+    >
+      <Box
+        sx={
+          orientation === "horizontal"
+            ? { borderBottom: 1, borderColor: "divider" }
+            : { borderBottom: "unset" }
+        }
+      >
         <Tabs
+          orientation={orientation}
           value={value}
           onChange={handleChange}
+          textColor={textColor}
+          indicatorColor={indicatorColor}
           aria-label="basic tabs example"
         >
           <Tab label="Item One" {...a11yProps(0)} />

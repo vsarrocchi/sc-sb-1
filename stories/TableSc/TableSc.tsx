@@ -7,6 +7,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+interface TableScProps {
+  size: "small" | "medium";
+}
+
 function createData(
   name: string,
   calories: number,
@@ -25,10 +29,10 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-const TableSc: React.FC = () => {
+const TableSc = ({ size }: TableScProps) => {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650 }} size={size} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>

@@ -9,4 +9,23 @@ export default {
 
 const Template: ComponentStory<typeof TabsSc> = (args) => <TabsSc {...args} />;
 
-export const Default = Template.bind({});
+export const Primary = Template.bind({});
+Primary.args = {
+  orientation: "horizontal",
+  textColor: "primary",
+  indicatorColor: "primary",
+};
+
+export const Colored = Template.bind({});
+Colored.args = {
+  orientation: "horizontal",
+  textColor: "secondary",
+  indicatorColor: "secondary",
+};
+
+export const Vertical = Template.bind({});
+Vertical.args = {
+  orientation: "vertical",
+  textColor: "primary",
+  indicatorColor: "primary",
+};
