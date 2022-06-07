@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 interface ButtonScProps {
-  variant: "text" | "outlined" | "contained" | undefined;
+  variant: "text" | "outlined" | "contained";
   color?:
     | "inherit"
     | "primary"
@@ -8,8 +8,7 @@ interface ButtonScProps {
     | "success"
     | "error"
     | "info"
-    | "warning"
-    | undefined;
+    | "warning";
   label: string;
 }
 

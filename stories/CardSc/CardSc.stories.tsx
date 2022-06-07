@@ -9,4 +9,12 @@ export default {
 
 const Template: ComponentStory<typeof CardSc> = (args) => <CardSc {...args} />;
 
-export const Default = Template.bind({});
+export const Standard = Template.bind({});
+Standard.args = {
+  variant: "elevation",
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  variant: "outlined",
+};

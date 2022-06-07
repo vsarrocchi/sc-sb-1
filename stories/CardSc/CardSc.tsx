@@ -5,6 +5,11 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import CardMedia from '@mui/material/CardMedia';
+
+interface CardScProps {
+  variant?: "elevation" | "outlined";
+}
 
 const bull = (
   <Box
@@ -15,9 +20,15 @@ const bull = (
   </Box>
 );
 
-const CardSc: React.FC = () => {
+const CardSc = ({ variant }: CardScProps) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card variant={variant} sx={{ width: 275 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image="https://source.unsplash.com/random"
+        alt="green iguana"
+      />
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
