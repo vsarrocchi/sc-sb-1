@@ -13,15 +13,18 @@ const Template: ComponentStory<typeof InputSc> = (args) => (
 
 export const Filled = Template.bind({});
 Filled.args = {
+  label: "Filled",
   variant: "filled",
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
+  label: "Outlined",
   variant: "outlined",
 };
 
 export const Standard = Template.bind({});
 Standard.args = {
+  label: "Standard",
   variant: "standard",
 };

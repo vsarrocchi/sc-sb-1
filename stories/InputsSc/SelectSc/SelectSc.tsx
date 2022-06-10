@@ -18,7 +18,7 @@ const SelectSc = ({ title, variant }: SelectScProps) => {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ width: 120 }}>
       <FormControl variant={variant} fullWidth>
         <InputLabel id="demo-simple-select-label">{title}</InputLabel>
         <Select
