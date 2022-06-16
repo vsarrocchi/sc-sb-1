@@ -8,11 +8,13 @@ on: push
 
 # List of jobs
 jobs:
+  style-dictionary:
   chromatic-deployment:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
     steps:
+        run: yarn run generate-tokens
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: yarn
