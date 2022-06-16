@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-        run: yarn run generate-tokens
       - uses: actions/checkout@v1
       - name: Install dependencies
+        run: yarn run generate-tokens
         run: yarn
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
