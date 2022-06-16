@@ -1,25 +1,18 @@
-# Warning!!!!!!
-# This is only testing that the plugin works as expected and should not be used in production
-name: Testing
+name: Generate Tokens On Input
 
 on:
-  workflow_run:
-    workflows: ["Transform tokens send from figma"]
-    types: [completed]
+  push:
+    paths:
+      - "style-dictionary/source/figma-tokens.json"
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
+  generate_tokens:
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Transform design tokens
+        run: "yarn && yarn run generate-tokens"
+      - name: Commit Generated Platform Deliverables
+        id: "auto-commit-action"
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm test
+          commit_message: Update platform deliverables
