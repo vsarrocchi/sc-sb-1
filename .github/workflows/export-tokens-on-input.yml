@@ -3,7 +3,7 @@ name: Generate Tokens On Input
 on:
   push:
     paths:
-      - "style-dictionary/source/figma-tokens.json"
+      - "style-dictionary/build/figma-tokens.json"
 
 jobs:
   generate_tokens:
