@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof ButtonSc> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   variant: "contained",
-  color: "secondary",
+  color: "primary",
   label: "Button",
 };
 
