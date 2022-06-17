@@ -1,4 +1,4 @@
-name: Generate Tokens On Input
+name: Generate Tokens On Input And Deploy To Chromatic
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - "style-dictionary/source/figma-tokens.json"
 
 jobs:
-  generate_tokens:
+  transform_figma_tokens:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: "12"
       - name: Install Node Dependencies
@@ -23,17 +23,12 @@ jobs:
         with:
           commit_message: Update platform deliverables
   chromatic-deployment:
-    # Operating System
     runs-on: ubuntu-latest
-    # Job steps
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: yarn
-        # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
-        # Chromatic GitHub Action options
         with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
