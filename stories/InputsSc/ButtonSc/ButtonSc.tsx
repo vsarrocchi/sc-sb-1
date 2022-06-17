@@ -32,6 +32,7 @@ const ButtonSc = ({ variant, color, label, disabled, size }: ButtonScProps) => {
       <Button variant={variant} color={color} disabled={disabled} size={size}>
         {label}
       </Button>
+      <button style={{ backgroundColor: tokenRed }}>Test</button>
     </ThemeProvider>
   );
 };
