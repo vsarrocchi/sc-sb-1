@@ -3,14 +3,20 @@ name: Generate Tokens On Input
 on:
   push:
     paths:
-      - "style-dictionary/build/figma-tokens.json"
+      - "style-dictionary/source/figma-tokens.json"
 
 jobs:
   generate_tokens:
     runs-on: macos-latest
     steps:
-      - name: Transform design tokens
-        run: "yarn && yarn run generate-tokens"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - name: Install Node Dependencies
+        run: npm install
+      - name: Build Style Dictionary
+        run: yarn run generate-tokens
       - name: Commit Generated Platform Deliverables
         id: "auto-commit-action"
         uses: stefanzweifel/git-auto-commit-action@v4
