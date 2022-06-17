@@ -29,7 +29,7 @@ interface ButtonScProps {
 const ButtonSc = ({ variant, color, label, disabled, size }: ButtonScProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant={variant} color="primary" disabled={disabled} size={size}>
+      <Button variant={variant} color={color} disabled={disabled} size={size}>
         {label}
       </Button>
     </ThemeProvider>
