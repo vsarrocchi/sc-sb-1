@@ -26,6 +26,11 @@ jobs:
     needs: transform_figma_tokens
     runs-on: ubuntu-latest
     steps:
+      # 👇 Version 2 of the action
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: yarn
