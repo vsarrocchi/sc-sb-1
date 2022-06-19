@@ -1,9 +1,9 @@
 name: Transform Figma Tokens
 
-on:
-  push:
-    paths:
-      - "style-dictionary/source/figma-tokens.json"
+on: push
+  # push:
+  #   paths:
+  #     - "style-dictionary/source/figma-tokens.json"
 
 jobs:
   transform_figma_tokens:
