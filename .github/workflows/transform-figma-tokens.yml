@@ -26,10 +26,6 @@ jobs:
     needs: transform_figma_tokens
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@v2
-      #   with:
-      #     fetch-depth: 0
       - name: Checkout repository
       - uses: actions/checkout@v1
       - name: Install dependencies
