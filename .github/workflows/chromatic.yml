@@ -1,16 +1,16 @@
-# name: Transform Figma Tokens
+name: Transform Figma Tokens
 
-# on: push
+on: push
 
-# jobs:
-#   chromatic-deployment:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v1
-#       - name: Install dependencies
-#         run: yarn
-#       - name: Publish to Chromatic
-#         uses: chromaui/action@v1
-#         with:
-#           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
