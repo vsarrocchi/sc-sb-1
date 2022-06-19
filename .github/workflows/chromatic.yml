@@ -1,4 +1,4 @@
-name: Transform Figma Tokens
+name: Chromatic deploy
 
 on: push
 
