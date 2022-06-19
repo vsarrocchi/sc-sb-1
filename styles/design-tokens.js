@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 19 Jun 2022 06:59:34 GMT
+ * Generated on Sun, 19 Jun 2022 07:09:31 GMT
  */
 
-export const tokenRed = "#d426d1";
+export const tokenRed = "#2f26d4";
