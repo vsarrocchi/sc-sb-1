@@ -1,7 +1,5 @@
 name: Chromatic deploy
 
-# on: push
-
 on:
   workflow_run:
     workflows: [Transform Figma Tokens]
